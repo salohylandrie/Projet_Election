@@ -1,0 +1,77 @@
+<div class="container mt-5">
+  <div class="card">
+    <h4 class="card-header">Create Bureau de Vote
+      <a routerLink="/bureau-list-route" class="btn btn-primary float-end"> Back</a>
+    </h4>
+    <form #f="ngForm" (ngSubmit)="createOrUpdateBureau(f)">
+      <div class="mb-3">
+        <label for="salleBV">Numéro</label>
+        <input type="text" name="salleBV" class="form-control" placeholder="14" [(ngModel)]="selectedBureau.salleBV" class="form-control" required #salleBV="ngModel">
+        <div *ngIf="f.submitted && salleBV.invalid" class="text-danger">salleBV Cand is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="nbElecInscri">Nombre électeur inscrit</label>
+        <input type="number" name="nbElecInscri" class="form-control" placeholder="2" [(ngModel)]="selectedBureau.nbElecInscri" class="form-control" required #nbElecInscri="ngModel">
+        <div *ngIf="f.submitted && nbElecInscri.invalid" class="text-danger">nbElecInscri Cand is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="nbVotant">Nombre votants</label>
+        <input type="number" name="nbVotant" class="form-control" placeholder="2" [(ngModel)]="selectedBureau.nbVotant"   class="form-control" required #nbVotant="ngModel">
+        <div *ngIf="f.submitted && nbVotant.invalid" class="text-danger">nbVotant Cand is required</div>
+        <div *ngIf=" errorMessageNbVotant && selectedBureau.nbVotant > selectedBureau.nbElecInscri" class="text-danger">{{ errorMessageNbVotant }}</div>
+        <div *ngIf=" errorMessageNbVotante && (selectedBureau.nbVoteNul + selectedBureau.nbVoteBl) > selectedBureau.nbVotant" class="text-danger">{{ errorMessageNbVotante }}</div>
+      
+      </div>
+      <div class="mb-3">
+        <label for="nbVoteBl">Nombre vote blanc</label>
+        <input type="number" name="nbVoteBl" class="form-control" placeholder="2" [(ngModel)]="selectedBureau.nbVoteBl" class="form-control" required #nbVoteBl="ngModel">
+        <div *ngIf="f.submitted && nbVoteBl.invalid" class="text-danger">nbVoteBl Cand is required</div>
+        <div *ngIf="errorMessageNbVoteBl && selectedBureau.nbVoteBl > selectedBureau.nbVotant" class="text-danger">{{ errorMessageNbVoteBl }}</div>
+      </div>
+      <div class="mb-3">
+        <label for="nbVoteNul">Nombre vote nul</label>
+        <input type="number" name="nbVoteNul" class="form-control" placeholder="2" [(ngModel)]="selectedBureau.nbVoteNul" class="form-control" required #nbVoteNul="ngModel">
+        <div *ngIf="f.submitted && nbVoteNul.invalid" class="text-danger">nbVoteNul Cand is required</div>
+        <div *ngIf="errorMessageNbVoteNul && selectedBureau.nbVoteNul > selectedBureau.nbVotant" class="text-danger">{{ errorMessageNbVoteNul }}</div>
+      </div>
+      <div class="form-group">
+        <label for="nomComm">commune Name: {{ selecteCommune }}</label>
+      </div>
+      <div class="form-group">
+        <label for="nomReg">Region Name: {{ selectedRegion }}</label>
+      </div>
+      <div class="form-group">
+        <label for="nomDistr">District Name: {{ selectedDistrict }}</label>
+      </div>
+      
+
+  
+    
+      <div class="form-group">
+      <div class="mb-3">
+        <label for="code_Fokt">Code Fokotany</label>
+        <select id="nomFokt" name="nomFokt" class="form-control" [(ngModel)]="selectedBureau.nomFokt"  (change)="onDistrictSelection()"  class="form-control" required #nomFokt="ngModel">
+          <option *ngFor="let fokotany of fokotanyList" [ngValue]="fokotany.nomFokt">{{ fokotany.nomFokt }}</option>
+        </select>
+        <div *ngIf="f.submitted && nomFokt.invalid" class="text-danger">
+          <div *ngIf="nomFokt.errors?.required">nomFokt est requis.</div>
+        </div>
+      </div>
+      </div>
+      
+
+
+      <div class="mb-3">
+        <label for="centreBV">Centre de vote</label>
+        <input type="text" name="centreBV" class="form-control" placeholder="14" [(ngModel)]="selectedBureau.centreBV" class="form-control" required #prenomCand="ngModel">
+        <div *ngIf="f.submitted && prenomCand.invalid" class="text-danger">Prénom Cand is required</div>
+      </div>
+      <div class="form-group">
+        <label for="suffrageExprime">Suffrage exprimé</label>
+        <input type="number" class="form-control" id="suffrageExprime" name="suffrageExprime" [(ngModel)]="selectedBureau.suffrageExprime" disabled>
+        <input type="hidden" name="suffrageExprime" [ngModel]="selectedBureau.suffrageExprime">
+      </div>
+      <button class="btn btn-success btn-lg btn-block" type="submit">Save</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container mt-5" id="view">
+    <div class="card" id="view2">
+      <div class="card-header">
+        <h4>Détails de l'électeur</h4>
+      </div>
+      <div class="card-body" >
+        <div class="row" >
+          <div class="col-md-6" id="view3" >
+            <ul class="list-group" >
+              <li class="list-group-item">ID : {{ electeur.idcand  }}</li>
+              <li class="list-group-item">Numéro : {{ electeur.numCand }}</li>
+              <li class="list-group-item">Nom : {{ electeur.nomCand }}</li>
+              <li class="list-group-item">Prénom : {{ electeur.prenomCand }}</li>
+              
+            </ul>
+            <div class="container" style="background-color:#cec7c7c8" id="fermer">
+          <button routerLink="/electeur-list-route" id="boutonfermer"><p id="textfermer">FERMER</p></button> 
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  

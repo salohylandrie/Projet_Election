@@ -1,0 +1,41 @@
+#box{
+    box-shadow:  01px 05px 50px 10px rgb(119, 159, 119);
+   
+    border-radius: 10px;
+}
+
+#box2{
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+#search{
+    margin-left: 925px;
+    margin-right: -300px;
+
+}
+
+#sidebar-wrapper{
+  box-shadow:  01px 05px 50px 10px rgb(119, 159, 119);
+   
+  border-radius: 10px; 
+
+  border-width: 100cap;
+
+}
+
+#tete{
+  box-shadow:  01px 05px 50px 10px rgb(141, 142, 141);
+  height: 12%;
+  border-radius: 10px;
+}
+
+
+#titre{
+     margin-left: 2.5%;
+     margin-top: 1.7%;
+     margin-bottom: -3%;
+}
+#text{
+  margin-top: 30%;
+}

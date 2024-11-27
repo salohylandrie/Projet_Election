@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <div class="card">
+    <h4 class="card-header">Create fokotany
+      <a routerLink="/fokotany-list-route" class="btn btn-primary float-end"> Back</a>
+    </h4>
+    <form #fokotanyForm="ngForm" (ngSubmit)="createOrUpdateFokotany(fokotanyForm)">
+      <div class="form-group">
+        <label for="nomReg">Region Name: {{ selectedRegion }}</label>
+      </div>
+      <div class="form-group">
+        <label for="nomDistr">District Name: {{ selectedistrict }}</label>
+      </div>
+      <div class="form-group">
+        <label for="nomComm">Commune Name</label>
+        <select id="nomComm" name="nomComm" [(ngModel)]="selectedFokotany.nomComm" (change)="onDistrictSelection()" class="form-control" required>
+          <option *ngFor="let commune of communes" [ngValue]="commune.nomComm">{{ commune.nomComm }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nomFokt">Fokotany Name</label>
+        <input type="text" id="nomFokt" name="nomFokt" [(ngModel)]="selectedFokotany.nomFokt" class="form-control" required>
+      </div>
+      <button class="btn btn-success btn-lg btn-block" type="submit">Save</button>
+    </form>
+  </div>
+</div>

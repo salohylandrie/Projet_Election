@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div class="card">
+    <h4 class="card-header">Créer une Élection
+      <a routerLink="/electionpr-list-route" class="btn btn-primary float-end"> Retour</a>
+    </h4>
+    <form #f="ngForm">
+      <div class="mb-3">
+        <label>Date d'Élection</label>
+        <input type="date" name="date_Elec" class="form-control" [(ngModel)]="selectedElecteur.date_Elec" required>
+      </div>
+      <div class="form-group">
+        <label for="code_ListeCand">Code Liste Candidats</label>
+        <select id="code_ListeCand" name="code_ListeCand" [(ngModel)]="selectedElecteur.code_ListeCand" class="form-control" required (change)="onDistrictSelection()">
+          <option *ngFor="let code of listesCandidats" [ngValue]="code">{{ code }}</option>
+        </select>
+      </div>
+     
+      <div class="form-group">
+        <label for="nomsCandidats">Noms des Candidats</label>
+        <ul>
+          <li *ngFor="let nom of nomsCandidats">{{ nom }}</li>
+        </ul>
+      </div>
+      <button class="btn btn-success btn-lg btn-block" (click)="createOrUpdateElecteur(f)">Enregistrer</button>
+    </form>
+  </div>
+</div>

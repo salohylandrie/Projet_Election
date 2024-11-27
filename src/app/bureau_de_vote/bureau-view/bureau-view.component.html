@@ -1,0 +1,26 @@
+<div class="container mt-5" id="view">
+    <div class="card" id="view2">
+      <div class="card-header">
+        <h4>Détails de l'électeur</h4>
+      </div>
+      <div class="card-body" >
+        <div class="row" >
+          <div class="col-md-6" id="view3" >
+            <ul class="list-group" >
+              <li class="list-group-item">ID : {{ bureau.idBV  }}</li>
+              <li class="list-group-item">Numéro : {{ bureau.salleBV }}</li>
+              <li class="list-group-item">Nom : {{ bureau.nbElecInscri }}</li>
+              <li class="list-group-item">Prénom : {{ bureau.nbVotant }}</li>
+              <li class="list-group-item">Prénom : {{ bureau.nbVoteBl }}</li>
+              <li class="list-group-item">Prénom : {{ bureau.nbVoteNul }}</li>
+              
+            </ul>
+            <div class="container" style="background-color:#cec7c7c8" id="fermer">
+          <button routerLink="/bureau-list-route" id="boutonfermer"><p id="textfermer">FERMER</p></button> 
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  

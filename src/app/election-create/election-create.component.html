@@ -1,0 +1,26 @@
+
+<div class="container mt-5">
+    <div class="card">
+      <h4 class="card-header">Create Electeur
+        <a routerLink="/"  class="btn btn-danger float-end"> Back</a>
+      </h4>
+      <form >
+      <div class="mb-3 ">
+        <label> Name </label>
+        <input type="text" [(ngModel)]="employeDetail.name" class="form-control"   placeholder="Salohy">
+      </div>
+      <div class="mb-3 ">
+        <label> First Name </label>
+        <input type="text" [(ngModel)]="employeDetail.email" class="form-control" placeholder="salohy@gamil.com">
+      </div>
+      <div class="mb-3 ">
+        <label> CIN number</label>
+        <input type="text" [(ngModel)]="employeDetail.phone" class="form-control" placeholder="0343876330">
+      </div>
+      
+        <button class="btn btn-success btn-lg btn-block" (click)="addEmploye(employeDetail)">save</button>
+    </form>
+
+
+    </div>
+</div>

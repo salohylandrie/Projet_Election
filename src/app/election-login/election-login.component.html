@@ -1,0 +1,79 @@
+
+
+<div class="tout">
+  <div class="entete3">
+    
+  </div>
+  <div class="entete4">
+    
+  </div>
+  <div class="entete">
+   
+    <h1 >Elections</h1>
+  </div>
+  
+  <div class="entete2">
+    
+  </div>
+  
+  <h4>
+    Information
+  
+  </h4>
+  <p>Bienvenue sur cette application, espace de dématérialisation des votes professionnels.</p> 
+  
+  <img src="/assets/imagevote.jpeg" class="image2">
+   
+    <div class="modal-content animate"  method="post" class="was-validated" >
+    
+      <img src="/assets/imagelog.jpg" class="image">
+      
+      <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+      <div class="container mt-5" class="a">
+  
+        <div class="form-group">
+        <label for="uname"><b>Utilisateur</b></label>
+        <input type="text" name="username" formControlName="username" autocomplete="off"  >
+        <div *ngIf="submitted && username.invalid" class="text-danger">
+         Votre nom d'utilisateur est nécessaire
+        </div>
+      </div>
+       
+  
+        <div class="form-group">
+        <label for="psw" ><b>Mot de passe</b></label>
+        <input type="password" name="password" formControlName="password" autocomplete="off"  >
+        <div *ngIf="submitted && password.invalid" class="text-danger">
+          Votre mot de passe est nécessaire
+        </div>
+      </div>
+        
+  
+      
+          
+      <div *ngIf="errorMessage" class="text-danger">
+        {{ errorMessage }}
+      </div>
+          
+        <button type="submit" class="login">SE CONNECTER</button>
+        
+      </div>
+     
+    </form>
+  
+      <div class="container" style="background-color:#f1f1f1">
+       
+       
+      </div>
+  
+  
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  

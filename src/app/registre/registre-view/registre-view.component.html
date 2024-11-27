@@ -1,0 +1,27 @@
+<div class="container mt-5" id="view">
+    <div class="card" id="view2">
+      <div class="card-header">
+        <h4>Détails de l'électeur</h4>
+      </div>
+      <div class="card-body" >
+        <div class="row" >
+          <div class="col-md-6" id="view3" >
+            <ul class="list-group" >
+              <li class="list-group-item">ID : {{ users.id }}</li>
+              <li class="list-group-item">Utilisateur : {{ users.username }}</li>
+              <li class="list-group-item">Mot de passe : {{ users.password }}</li>
+              <li class="list-group-item">fokotany : {{ users.fokotany }}</li>
+              <li class="list-group-item">Commune : {{ users.commune }}</li>
+              <li class="list-group-item">district : {{ users.district }}</li>
+              <li class="list-group-item">prefecture : {{ users.prefecture }}</li>
+              
+            </ul>
+            <div class="container" style="background-color:#cec7c7c8" id="fermer">
+          <button routerLink="/registre-list-route" id="boutonfermer"><p id="textfermer">FERMER</p></button> 
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  

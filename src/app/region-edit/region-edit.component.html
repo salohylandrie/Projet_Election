@@ -1,0 +1,31 @@
+
+<div class="container mt-5">
+    <div class="card">
+      <h4 class="card-header">Create Electeur
+        <a routerLink="/region-list-route"  class="btn btn-primary float-end"> Back</a>
+      </h4>
+     
+        <form #f="ngForm" (ngSubmit)="createOrUpdateRegion(f)">
+          
+     
+      
+      <div class="mb-3 ">
+        <label> Nom région </label>
+        <input type="text" name="nomReg" class="form-control"   [(ngModel)] = "selectedRegion.nomReg" required>
+      </div>
+      
+     
+      <div *ngIf="updatedSuccessfully" class="alert alert-success"> Mise à jour réussie !
+      </div>
+      <button type="submit" class="btn btn-primary">Mettre à jour</button>
+
+      
+    </form>
+  
+  
+  
+    
+    </div>
+  </div>
+  
+  

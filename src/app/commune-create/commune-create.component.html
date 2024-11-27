@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div class="card">
+    <h4 class="card-header">Create Commune
+      <a routerLink="/commune-list-route" class="btn btn-primary float-end"> Back</a>
+    </h4>
+    <form #communeForm="ngForm" (ngSubmit)="createOrUpdateCommune(communeForm)">
+       <div class="form-group">
+      <!-- Label pour afficher le nom de la région associé au district sélectionné -->
+      <label for="nomReg">Region Name
+         {{ selectedRegion }}</label>
+    </div>
+    <br>
+      <div class="form-group">
+        <label for="nomDistr">District Name</label>
+        <select id="nomDistr" name="nomDistr" [(ngModel)]="selectedCommune.nomDistr" (change)="onDistrictSelection()" class="form-control" required>
+          <option *ngFor="let district of districts" [ngValue]="district.nomDistr">{{ district.nomDistr }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nomComm">Commune Name</label>
+        <input type="text" id="nomComm" name="nomComm" [(ngModel)]="selectedCommune.nomComm" class="form-control" required>
+      </div>
+     
+      <button class="btn btn-success btn-lg btn-block" type="submit">Save</button>
+    </form>
+  </div>
+</div>

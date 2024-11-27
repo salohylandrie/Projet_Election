@@ -1,0 +1,44 @@
+<div class="container mt-5">
+  <div class="card">
+    <h4 class="card-header">Create Electeur
+      <a routerLink="/registre-list-route"  class="btn btn-primary float-end"> Back</a>
+    </h4>
+    <form  #f = "ngForm">
+      
+      
+    <div class="mb-3 ">
+      <label> Utilisateur </label>
+      <input type="text" name="nomElecteur" class="form-control"   placeholder="14" [(ngModel)] = "selectedElecteur.username">
+    </div>
+    <div class="mb-3 ">
+      <label> Mot de passe </label>
+      <input type="text" name="prenomElecteur" class="form-control"   placeholder="RANDRIA" [(ngModel)] = "selectedElecteur.password">
+    </div>
+    <div class="mb-3 ">
+      <label> Fokotany </label>
+      <input type="text" name="numCIN" class="form-control"   placeholder="Hajaina" [(ngModel)] = "selectedElecteur.fokotany">
+      <div class="mb-3 ">
+          <label> Commune </label>
+          <input type="text" name="numCIN" class="form-control"   placeholder="Hajaina" [(ngModel)] = "selectedElecteur.commune">
+        </div>
+        <div class="mb-3 ">
+          <label> District </label>
+          <input type="text" name="numCIN" class="form-control"   placeholder="Hajaina" [(ngModel)] = "selectedElecteur.district">
+        </div>
+        <div class="mb-3 ">
+          <label> Prefecture </label>
+          <input type="text" name="numCIN" class="form-control"   placeholder="Hajaina" [(ngModel)] = "selectedElecteur.prefecture">
+        </div>
+    </div>
+   
+   
+    <button class="btn btn-success btn-lg btn-block" (click)="createOrUpdateUser(f)">save</button>
+  </form>
+
+
+
+
+  
+  </div>
+</div>
+

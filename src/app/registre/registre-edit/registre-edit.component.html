@@ -1,0 +1,50 @@
+
+<div class="container mt-5">
+    <div class="card">
+      <h4 class="card-header">Create User
+        <a routerLink="/registre-list-route"  class="btn btn-primary float-end"> Back</a>
+      </h4>
+     
+        <form #f="ngForm" (ngSubmit)="createOrUpdateUser(f)">
+          
+      <div class="mb-3 ">
+        <label> User </label>
+        <input type="text" name="numCand" class="form-control"   [(ngModel)] = "selectedElecteur.username" required>
+      </div>
+      <div class="mb-3 ">
+        <label> Mot de passe </label>
+        <input type="text" name="nomCand" class="form-control"    [(ngModel)] = "selectedElecteur.password" required>
+      </div>
+      <div class="mb-3 ">
+        <label> Fokotany </label>
+        <input type="text" name="prenomCand" class="form-control"   [(ngModel)] = "selectedElecteur.fokotany" required>
+      </div>
+      <div class="mb-3 ">
+        <label> Commune </label>
+        <input type="text" name="prenomCand" class="form-control"   [(ngModel)] = "selectedElecteur.commune" required>
+      </div>
+      <div class="mb-3 ">
+        <label> District </label>
+        <input type="text" name="prenomCand" class="form-control"   [(ngModel)] = "selectedElecteur.district" required>
+      </div>
+      <div class="mb-3 ">
+        <label> Prefecture </label>
+        <input type="text" name="prenomCand" class="form-control"   [(ngModel)] = "selectedElecteur.prefecture" required>
+      </div>
+      
+     
+      <div *ngIf="updatedSuccessfully" class="alert alert-success"> Mise à jour réussie !
+      </div>
+      <button type="submit" class="btn btn-primary">Mettre à jour</button>
+
+      
+    </form>
+  
+  
+  
+  
+    
+    </div>
+  </div>
+  
+  

@@ -1,0 +1,47 @@
+
+<div class="container mt-5">
+    <div class="card">
+      <h4 class="card-header">Create Bureau
+        <a routerLink="/bureau-list-route"  class="btn btn-primary float-end"> Back</a>
+      </h4>
+     
+        <form #f="ngForm" (ngSubmit)="createOrUpdateBureau(f)">
+        
+          
+      <div class="mb-3 ">
+        <label> Numéro </label>
+        <input type="text" name="numCand" class="form-control"   [(ngModel)] = "selectedBureau.salleBV" required>
+      </div>
+      <div class="mb-3 ">
+        <label> Nombre électeur inscrit </label>
+        <input type="text" name="nomCand" class="form-control"    [(ngModel)] = "selectedBureau.nbElecInscri" required>
+      </div>
+      <div class="mb-3 ">
+        <label> nombre votant </label>
+        <input type="text" name="prenomCand" class="form-control"   [(ngModel)] = "selectedBureau.nbVotant" required>
+      </div>
+      <div class="mb-3 ">
+        <label> Nombre vote blanc</label>
+        <input type="text" name="prenomCand" class="form-control"   [(ngModel)] = "selectedBureau.nbVoteBl" required>
+      </div>
+      <div class="mb-3 ">
+        <label> Nombre vote null </label>
+        <input type="text" name="prenomCand" class="form-control"   [(ngModel)] = "selectedBureau.nbVoteNul" required>
+      </div>
+      
+     
+      <div *ngIf="updatedSuccessfully" class="alert alert-success"> Mise à jour réussie !
+      </div>
+      <button type="submit" class="btn btn-primary">Mettre à jour</button>
+
+      
+    </form>
+  
+  
+  
+  
+    
+    </div>
+  </div>
+  
+  

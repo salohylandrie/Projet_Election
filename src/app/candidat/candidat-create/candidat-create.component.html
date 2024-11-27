@@ -1,0 +1,63 @@
+<div class="container mt-5">
+  <div class="card">
+    <h4 class="card-header">Create Electeur
+      <a routerLink="/electeur-list-route" class="btn btn-primary float-end"> Back</a>
+    </h4>
+    <form #f="ngForm" (ngSubmit)="createOrUpdateElecteur(f)" >
+
+      <div class="mb-3">
+        <label for="numElecteur">Numéro</label>
+        <input type="text" name="numCand" id="numCand" class="form-control" placeholder="14" [(ngModel)]="selectedElecteur.numCand" required pattern="[0-9]+" #numCand="ngModel">
+        <div *ngIf="f.submitted && numCand.invalid" class="text-danger">
+          <div *ngIf="numCand.errors?.required">Num Cand is required.</div>
+          <div *ngIf="numCand.errors?.pattern">Num Cand should be a number.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="nomCand">Nom</label>
+        <input type="text" name="nomCand" id="nomCand" class="form-control" placeholder="RANDRIA" [(ngModel)]="selectedElecteur.nomCand" required pattern="[a-zA-Z ]+" #nomCand="ngModel">
+        <div *ngIf="f.submitted && nomCand.invalid" class="text-danger">
+          <div *ngIf="nomCand.errors?.required">Nom Cand is required.</div>
+          <div *ngIf="nomCand.errors?.pattern">Nom Cand should not be a number and may contain spaces.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="prenomCand">Prénom</label>
+        <input type="text" name="prenomCand" id="prenomCand" placeholder="Randria" [(ngModel)]="selectedElecteur.prenomCand" class="form-control" required pattern="[a-zA-Z ]+" #prenomCand="ngModel">
+        <div *ngIf="f.submitted && prenomCand.invalid" class="text-danger">
+          <div *ngIf="prenomCand.errors?.required">Prénom Cand is required.</div>
+          <div *ngIf="prenomCand.errors?.pattern">Prénom Cand should not be a number and may contain spaces.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nomListe">Nom Liste</label>
+        <select id="nomListe" name="nomListe" [(ngModel)]="selectedElecteur.nomListe" class="form-control" required #nomListe="ngModel">
+          <option *ngFor="let listecandidat of listecandidats" [ngValue]="listecandidat.nomListe">{{ listecandidat.nomListe }}</option>
+        </select>
+        <div *ngIf="f.submitted && nomListe.invalid" class="text-danger">
+          <div *ngIf="nomListe.errors?.required">Nom Liste is required.</div>
+        </div>
+      </div>
+
+      <button class="btn btn-success btn-lg btn-block" type="submit">Save</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

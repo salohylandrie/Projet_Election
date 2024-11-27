@@ -1,0 +1,52 @@
+
+
+
+
+
+#view{
+    box-shadow:  01px 05px 50px 02px rgb(119, 159, 119);
+   
+    border-radius: 10px;
+    width: 40% ;
+    margin-bottom:20px;
+    height: 886px;
+    padding-top: 0.7%;
+    background-color: rgb(111, 167, 188);
+    
+}
+#view2{
+    height: 866px ;
+  
+   
+}
+#view3{
+ 
+margin-bottom: 10%;
+}
+
+#fermer {
+    width: 584px;
+    border-radius: 5px;
+    height: 60px;
+padding-top: 10px;
+margin-left: -1.1%;
+
+
+  }
+
+  #textfermer{
+    color: aliceblue;
+    text-align: center;
+    margin-top: 6%;
+  }
+#boutonfermer{
+  border-radius: 7px;
+    background-color: black;
+    width: 120px;
+    height: 40px;
+    margin-left: 75%;
+  
+
+ 
+    
+}

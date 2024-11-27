@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>Création/Modification de Résultat Candidat</h2>
+
+  <form #resultatForm="ngForm" (ngSubmit)="createOrUpdateElecteur(resultatForm)">
+    <div class="form-group">
+      <label for="idcand">Sélectionner un candidat :</label>
+      <select class="form-control" id="idcand" name="idcand" [(ngModel)]="selectedElecteur.idcand" (change)="onCandidatSelection()" required>
+        <option *ngFor="let candidat of listecandidats" [value]="candidat.idcand">{{ candidat.idcand }}</option>
+      </select>
+    </div>
+
+    <div *ngIf="selectedCandidatDetails">
+      <p>Nom: {{ selectedCandidatDetails.nomCand }}</p>
+      <p>Prénom: {{ selectedCandidatDetails.prenomCand }}</p>
+      <p>Numéro: {{ selectedCandidatDetails.numCand }}</p>
+      <p>Code Liste Candidat: {{ selectedCandidatDetails.code_ListeCand }}</p>
+      <!-- Ajoutez d'autres détails au besoin -->
+    </div>
+  
+
+    <div class="form-group">
+      <label for="nombreVote">Nombre de votes :</label>
+      <input type="number" class="form-control" id="nombreVote" name="nombreVote" [(ngModel)]="selectedElecteur.nombreVote" required>
+    </div>
+    <div class="form-group">
+      <label for="idBV">Sélectionner un bureau de vote :</label>
+      <select class="form-control" id="idBV" name="idBV" [(ngModel)]="selectedElecteur.idBV" (change)="onBureauSelection()" required>
+        <option *ngFor="let bureau of Bureaux" [value]="bureau.idBV">{{ bureau.idBV }}</option>
+      </select>
+    </div>
+
+    <div *ngIf="selectedBureauDetails">
+      <p>Nom Fokt: {{ selectedBureauDetails.nomFokt }}</p>
+      <p>Code Fokt: {{ selectedBureauDetails.code_Fokt }}</p>
+      <p>Nom Comm: {{ selectedBureauDetails.nomComm }}</p>
+      <p>Salle BV: {{ selectedBureauDetails.salleBV }}</p>
+    
+      <!-- Ajoutez d'autres détails au besoin -->
+    </div>
+    <!-- Autres champs à ajouter selon vos besoins -->
+
+    <div class="form-group">
+      <label for="idBV">Sélectionner un code liste candidat :</label>
+      <select class="form-control" id="code_ListeCand" name="code_ListeCand" [(ngModel)]="selectedElecteur.code_ListeCand" (change)="onElectionSelection()" required>
+        <option *ngFor="let bureau of electionpr" [value]="bureau.code_ListeCand">{{ bureau.code_ListeCand }}</option>
+      </select>
+    </div>
+
+    <div *ngIf="selectedElectionDetails">
+      <p>Code Election: {{ selectedElectionDetails.code_Elec }}</p>
+      
+    
+      <!-- Ajoutez d'autres détails au besoin -->
+    </div>
+
+    <button type="submit" class="btn btn-success btn-lg btn-block">Enregistrer</button>
+  </form>
+</div>
